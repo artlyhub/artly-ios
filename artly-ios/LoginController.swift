@@ -19,13 +19,25 @@ class LoginController: UIViewController {
         return view
     }()
 
-    let loginRegisterButton: UIButton = {
+    let logInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
-        button.setTitle("Register", for: .normal)
+        button.backgroundColor = UIColor.black
+        button.setTitle("로그인", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
+        return button
+    }()
+    
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor.black
+        button.setTitle("회원가입", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.cornerRadius = 5
         return button
     }()
     
@@ -65,46 +77,39 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    /*
     let profileImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "bgbg")
+        imageView.image = UIImage(named: "logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //view.backgroundColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
-        view.backgroundColor = UIColor(r: 61, g: 91, b: 151)
+        view.backgroundColor = UIColor.white
         
-        //let inputsContainerView = UIView()
-        //inputsContainerView.backgroundColor = UIColor.white
-        //inputsContainerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(inputsContainerView)
-        view.addSubview(loginRegisterButton)
-        //view.addSubview(profileImageView)
+        view.addSubview(signUpButton)
+        view.addSubview(logInButton)
+        view.addSubview(profileImageView)
         
         setupInputContainerView()
-        setupLoginRegisterButton()
-        //setupProfileImageView()
+        setupLogInButton()
+        setupSignUpButton()
+        setupProfileImageView()
         
     }
 
-    /*
     func setupProfileImageView() {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
-    */
     
     func setupInputContainerView() {
-        //need x, y, width, heigt constraints
         inputsContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         inputsContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         inputsContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
@@ -140,17 +145,22 @@ class LoginController: UIViewController {
         
     }
     
-    func setupLoginRegisterButton() {
-        //need x, y, width, heigt constraints
-        loginRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginRegisterButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
-        loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
-        loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    func setupLogInButton() {
+        logInButton.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
+        logInButton.rightAnchor.constraint(equalTo: inputsContainerView.centerXAnchor, constant: -6).isActive = true
+        logInButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
+        logInButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func setupSignUpButton() {
+        signUpButton.leftAnchor.constraint(equalTo: inputsContainerView.centerXAnchor, constant: 6).isActive = true
+        signUpButton.rightAnchor.constraint(equalTo: inputsContainerView.rightAnchor).isActive = true
+        signUpButton.topAnchor.constraint(equalTo: inputsContainerView.bottomAnchor, constant: 12).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     func preferredStatusBarstyle() -> UIStatusBarStyle {
         return .lightContent
-        
     }
 }
 
