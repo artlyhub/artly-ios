@@ -54,14 +54,22 @@
 		7E00FCF51F33483C0090F229 /* artly-ios */ = {
 			isa = PBXGroup;
 			children = (
-				7E00FCF61F33483C0090F229 /* AppDelegate.swift */,
+				7E04DEC61F3349DA00FB79A8 /* defaults */,
 				7E00FCF81F33483C0090F229 /* ViewController.swift */,
 				7E00FCFA1F33483C0090F229 /* Main.storyboard */,
+			);
+			path = "artly-ios";
+			sourceTree = "<group>";
+		};
+		7E04DEC61F3349DA00FB79A8 /* defaults */ = {
+			isa = PBXGroup;
+			children = (
+				7E00FCF61F33483C0090F229 /* AppDelegate.swift */,
 				7E00FCFD1F33483C0090F229 /* Assets.xcassets */,
 				7E00FCFF1F33483C0090F229 /* LaunchScreen.storyboard */,
 				7E00FD021F33483C0090F229 /* Info.plist */,
 			);
-			path = "artly-ios";
+			name = defaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +309,7 @@
 				7E00FD071F33483C0090F229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
