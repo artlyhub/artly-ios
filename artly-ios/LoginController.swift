@@ -44,6 +44,7 @@ class LoginController: UIViewController {
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
+        tf.tintColor = .black
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
@@ -58,6 +59,7 @@ class LoginController: UIViewController {
     let emailTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Email"
+        tf.tintColor = .black
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
@@ -72,6 +74,7 @@ class LoginController: UIViewController {
     let passwordTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
+        tf.tintColor = .black
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.isSecureTextEntry = true
         return tf
