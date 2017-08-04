@@ -10,9 +10,27 @@ import UIKit
 
 class SignUpController: UIViewController {
 
+    let registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor.white
+        button.setTitle("가입하기", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(registerBtnPressed), for: .touchUpInside)
+        return button
+    }()
+    
+    func registerBtnPressed(sender : UIButton) {
+        
+    }
+    
     let nameLabel: UILabel = {
-        let tf = UILabel()
-        return tf
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let nameTextField: UITextField = {
@@ -24,8 +42,9 @@ class SignUpController: UIViewController {
     }()
     
     let emailLabel: UILabel = {
-        let tf = UILabel()
-        return tf
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let emailTextField: UITextField = {
@@ -37,8 +56,9 @@ class SignUpController: UIViewController {
     }()
     
     let passwordLabel: UILabel = {
-        let tf = UILabel()
-        return tf
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     let passwordTextField: UITextField = {
@@ -61,9 +81,11 @@ class SignUpController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordLabel)
         view.addSubview(passwordTextField)
+        view.addSubview(registerButton)
         
         setupLabelView()
         setupTextFieldView()
+        setupButton()
     }
     
     func handleBackSpace() {
@@ -71,8 +93,15 @@ class SignUpController: UIViewController {
         present(loginController, animated: true, completion: nil)
     }
     
-    func setupLabelView() {
+    func setupButton() {
         
+    }
+    
+    func setupLabelView() {
+        registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        registerButton.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        registerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     func setupTextFieldView() {
