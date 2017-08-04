@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7E00FCF71F33483C0090F229 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E00FCF61F33483C0090F229 /* AppDelegate.swift */; };
-		7E00FCF91F33483C0090F229 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E00FCF81F33483C0090F229 /* ViewController.swift */; };
+		7E00FCF91F33483C0090F229 /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E00FCF81F33483C0090F229 /* CommunityController.swift */; };
 		7E00FCFC1F33483C0090F229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E00FCFA1F33483C0090F229 /* Main.storyboard */; };
 		7E00FCFE1F33483C0090F229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E00FCFD1F33483C0090F229 /* Assets.xcassets */; };
 		7E00FD011F33483C0090F229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E00FCFF1F33483C0090F229 /* LaunchScreen.storyboard */; };
 		7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E04DECA1F334B8B00FB79A8 /* LoginController.swift */; };
+		7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0EEE121F3494DD008873BA /* SignUpController.swift */; };
 		7E64CE801F33611900DEE7E8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E64CE7F1F33611900DEE7E8 /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E00FCF31F33483C0090F229 /* artly-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "artly-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E00FCF61F33483C0090F229 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E00FCF81F33483C0090F229 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E00FCF81F33483C0090F229 /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
 		7E00FCFB1F33483C0090F229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E00FCFD1F33483C0090F229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E00FD001F33483C0090F229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E00FD021F33483C0090F229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E04DECA1F334B8B00FB79A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7E0EEE121F3494DD008873BA /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		7E64CE7F1F33611900DEE7E8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				7E04DECA1F334B8B00FB79A8 /* LoginController.swift */,
-				7E00FCF81F33483C0090F229 /* ViewController.swift */,
+				7E00FCF81F33483C0090F229 /* CommunityController.swift */,
+				7E0EEE121F3494DD008873BA /* SignUpController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -167,9 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E00FCF91F33483C0090F229 /* ViewController.swift in Sources */,
+				7E00FCF91F33483C0090F229 /* CommunityController.swift in Sources */,
 				7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */,
 				7E00FCF71F33483C0090F229 /* AppDelegate.swift in Sources */,
+				7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

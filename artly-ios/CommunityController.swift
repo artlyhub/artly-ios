@@ -8,19 +8,18 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class CommunityController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
+        navigationItem.title = "Artly"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleLogout))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
     }
     
     func handleLogout() {
         let loginController = LoginController()
         present(loginController, animated: true, completion: nil)
-        
     }
 }
 

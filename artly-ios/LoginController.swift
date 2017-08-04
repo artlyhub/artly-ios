@@ -8,7 +8,9 @@
 
 import UIKit
 
+@IBDesignable
 class LoginController: UIViewController {
+    @IBOutlet weak var btnm: UIButton!
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -18,28 +20,47 @@ class LoginController: UIViewController {
         view.layer.masksToBounds = true
         return view
     }()
-
+    
     let logInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.black
-        button.setTitle("로그인", for: .normal)
+        button.backgroundColor = UIColor.white
+        button.setTitle("Log In", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(logInBtnPressed), for: .touchUpInside)
         return button
     }()
     
+    func logInBtnPressed(sender : UIButton) {
+        let _chageViewController =
+            UINavigationController(rootViewController: CommunityController())
+        present(_chageViewController, animated: false, completion: nil)
+    }
+    
+    @IBInspectable
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.black
-        button.setTitle("회원가입", for: .normal)
+        button.backgroundColor = UIColor.white
+        button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(SignUpBtnPressed), for: .touchUpInside)
         return button
     }()
+    
+    func SignUpBtnPressed(sender : UIButton) {
+        let _chageViewController =
+            UINavigationController(rootViewController: SignUpController())
+        present(_chageViewController, animated: false, completion: nil)
+    }
     
     let nameTextField: UITextField = {
         let tf = UITextField()
@@ -102,7 +123,6 @@ class LoginController: UIViewController {
         setupLogInButton()
         setupSignUpButton()
         setupProfileImageView()
-        
     }
 
     func setupProfileImageView() {
@@ -165,6 +185,7 @@ class LoginController: UIViewController {
     func preferredStatusBarstyle() -> UIStatusBarStyle {
         return .lightContent
     }
+    
 }
 
 extension UIColor {
