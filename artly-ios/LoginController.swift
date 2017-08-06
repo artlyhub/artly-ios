@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 class LoginController: UIViewController {
-    @IBOutlet weak var btnm: UIButton!
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -26,16 +25,17 @@ class LoginController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("Log In", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor(r: 220, g: 220, b: 220), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor(r: 220, g: 220, b: 220).cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(logInBtnPressed), for: .touchUpInside)
         return button
     }()
     
     func logInBtnPressed(sender : UIButton) {
+        getUserDataFromServer()
         let _chageViewController =
             UINavigationController(rootViewController: CommunityController())
         present(_chageViewController, animated: false, completion: nil)
@@ -47,10 +47,10 @@ class LoginController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor(r: 220, g: 220, b: 220), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor(r: 220, g: 220, b: 220).cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(SignUpBtnPressed), for: .touchUpInside)
         return button
@@ -103,7 +103,7 @@ class LoginController: UIViewController {
     
     let profileImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
+        imageView.image = UIImage(named: "artlyLogo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -128,7 +128,7 @@ class LoginController: UIViewController {
     func setupProfileImageView() {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: inputsContainerView.topAnchor, constant: -12).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
@@ -186,6 +186,25 @@ class LoginController: UIViewController {
         return .lightContent
     }
     
+    func getUserDataFromServer() {
+        guard let url = URL(string: "https://www.artlyhub.com/api/user/") else { return }
+        
+        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                print(data)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+        session.resume()
+    }
 }
 
 extension UIColor {

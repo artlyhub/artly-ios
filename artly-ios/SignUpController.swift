@@ -24,7 +24,30 @@ class SignUpController: UIViewController {
     }()
     
     func registerBtnPressed(sender : UIButton) {
+        let parameters = ["username": nameTextField.text, "last_name": lastNameTextField.text, "first_name": firstNameTextField.text, "email": emailTextField.text]
+        guard let url = URL(string: "https://www.artlyhub.com/api/user/") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            return }
+        request.httpBody = httpBody
         
+        let session = URLSession.shared
+        session.dataTask(with: request) {
+            (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
     }
     
     let nameLabel: UILabel = {
@@ -36,6 +59,22 @@ class SignUpController: UIViewController {
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
+        tf.tintColor = .black
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let firstNameTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "First"
+        tf.tintColor = .black
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
+    let lastNameTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Last"
         tf.tintColor = .black
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -77,6 +116,8 @@ class SignUpController: UIViewController {
         
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
+        view.addSubview(firstNameTextField)
+        view.addSubview(lastNameTextField)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordLabel)
@@ -106,12 +147,22 @@ class SignUpController: UIViewController {
     
     func setupTextFieldView() {
         nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameTextField.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 55).isActive = true
         nameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
         nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        firstNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        firstNameTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 5).isActive = true
+        firstNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        firstNameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        lastNameTextField.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 5).isActive = true
+        lastNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
+        lastNameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
         emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 5).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 5).isActive = true
         emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
