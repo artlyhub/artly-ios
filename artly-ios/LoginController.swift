@@ -9,7 +9,36 @@
 import UIKit
 
 @IBDesignable
-class LoginController: UIViewController {
+class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let plusPhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "artlyLogo").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handlePlusPhoto), for: .touchUpInside)
+        return button
+    }()
+    
+    func handlePlusPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            plusPhotoButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            plusPhotoButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width/2
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.layer.borderColor = UIColor.black.cgColor
+        plusPhotoButton.layer.borderWidth = 3
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -25,10 +54,10 @@ class LoginController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("Log In", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 220, g: 220, b: 220), for: .normal)
+        button.setTitleColor(UIColor(r: 150, g: 150, b: 150), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
-        button.layer.borderColor = UIColor(r: 220, g: 220, b: 220).cgColor
+        button.layer.borderColor = UIColor(r: 150, g: 150, b: 150).cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(logInBtnPressed), for: .touchUpInside)
         return button
@@ -41,16 +70,15 @@ class LoginController: UIViewController {
         present(_chageViewController, animated: false, completion: nil)
     }
     
-    @IBInspectable
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor.white
         button.setTitle("Sign Up", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor(r: 220, g: 220, b: 220), for: .normal)
+        button.setTitleColor(UIColor(r: 150, g: 150, b: 150), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.layer.cornerRadius = 5
-        button.layer.borderColor = UIColor(r: 220, g: 220, b: 220).cgColor
+        button.layer.borderColor = UIColor(r: 150, g: 150, b: 150).cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(SignUpBtnPressed), for: .touchUpInside)
         return button
@@ -196,10 +224,14 @@ class LoginController: UIViewController {
             if let data = data {
                 print(data)
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    //let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+                    //if let names = json["usernames"] as? [String] {
+                    //    print(names)
+                    //}
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
                     print(json)
-                } catch {
-                    print(error)
+                } catch let jsonError {
+                    print(jsonError)
                 }
             }
         }
@@ -211,4 +243,36 @@ extension UIColor {
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
+}
+
+extension UIView {
+    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  paddingTop: CGFloat, paddingLeft: CGFloat, paddingBottom: CGFloat, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+            self.topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+        }
+        
+        if let left = left {
+            self.leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom).isActive = true
+        }
+        
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+        
+        if width != 0 {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+        if height != 0 {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+    }
+    
 }

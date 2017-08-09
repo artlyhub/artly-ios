@@ -23,21 +23,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artlyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qzp-mj-PUB">
-                                <rect key="frame" x="0.0" y="241" width="375" height="208"/>
+                                <rect key="frame" x="0.0" y="229" width="375" height="144"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qzp-mj-PUB" secondAttribute="trailing" constant="-16" id="Vd4-mt-Z6E"/>
-                            <constraint firstItem="Qzp-mj-PUB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="221" id="aWH-xM-ezy"/>
-                            <constraint firstItem="Qzp-mj-PUB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="dzO-IL-YTb"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Qzp-mj-PUB" secondAttribute="bottom" constant="218" id="mwC-yW-NIL"/>
+                            <constraint firstItem="Qzp-mj-PUB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="209" id="Hms-GG-sCa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qzp-mj-PUB" secondAttribute="trailing" constant="-16" id="KF1-cw-EGX"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Qzp-mj-PUB" secondAttribute="bottom" constant="294" id="fB5-sJ-qj4"/>
+                            <constraint firstItem="Qzp-mj-PUB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="m8M-kK-T5O"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51.5" y="374.5"/>
+            <point key="canvasLocation" x="50.399999999999999" y="373.76311844077964"/>
         </scene>
     </scenes>
     <resources>

@@ -8,18 +8,28 @@
 
 import UIKit
 
-class CommunityController: UITableViewController {
+class CommunityController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = UICollectionViewFlowLayout()
+        let userProfileController = UserProfileController(collectionViewLayout: layout)
+        
+        let navController = UINavigationController(rootViewController: userProfileController)
+        
+        navController.tabBarItem.image = #imageLiteral(resourceName: "profile_unselected")
+        navController.tabBarItem.selectedImage = #imageLiteral(resourceName: "profile_selected")
         navigationItem.title = "Artly"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.black
+        tabBar.tintColor = .black
+        
+        viewControllers = [navController, UIViewController()]
     }
     
     func handleLogout() {
-        let loginController = LoginController()
-        present(loginController, animated: true, completion: nil)
+        let _chageViewController = LoginController();
+        present(_chageViewController, animated: true, completion: nil)
     }
 }
-

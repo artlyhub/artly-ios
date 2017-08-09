@@ -15,9 +15,9 @@ class SignUpController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitle("가입하기", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor(r: 150, g: 150, b: 150), for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor(r: 150, g: 150, b: 150).cgColor
         button.layer.borderWidth = 1
         button.addTarget(self, action: #selector(registerBtnPressed), for: .touchUpInside)
         return button
@@ -26,6 +26,31 @@ class SignUpController: UIViewController {
     func registerBtnPressed(sender : UIButton) {
         let parameters = ["username": nameTextField.text, "last_name": lastNameTextField.text, "first_name": firstNameTextField.text, "email": emailTextField.text]
         guard let url = URL(string: "https://www.artlyhub.com/api/user/") else { return }
+        
+        //같은 name있는지 확인
+        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                print(data)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    for dictionaty in json as! [[String: AnyObject]] {
+                        if(self.nameTextField.text == dictionaty["username"] as? String) {
+                            print("Exist same name in DataBase.")
+                            return
+                        }
+                    }
+                } catch let jsonError {
+                    print(jsonError)
+                }
+            }
+        }
+        session.resume()
+
+        
+        //서버에 등록
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -33,8 +58,8 @@ class SignUpController: UIViewController {
             return }
         request.httpBody = httpBody
         
-        let session = URLSession.shared
-        session.dataTask(with: request) {
+        let sessionRegister = URLSession.shared
+        sessionRegister.dataTask(with: request) {
             (data, response, error) in
             if let response = response {
                 print(response)

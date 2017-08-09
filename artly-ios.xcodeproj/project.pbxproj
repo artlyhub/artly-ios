@@ -13,8 +13,11 @@
 		7E00FCFE1F33483C0090F229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E00FCFD1F33483C0090F229 /* Assets.xcassets */; };
 		7E00FD011F33483C0090F229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E00FCFF1F33483C0090F229 /* LaunchScreen.storyboard */; };
 		7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E04DECA1F334B8B00FB79A8 /* LoginController.swift */; };
+		7E0ADDE51F37711000C7B65F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0ADDE41F37711000C7B65F /* User.swift */; };
 		7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0EEE121F3494DD008873BA /* SignUpController.swift */; };
 		7E49114F1F372BF7003A3475 /* artlyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E49114E1F372BF7003A3475 /* artlyLogo.png */; };
+		7E5ECB7B1F3B34B800439F21 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */; };
+		7E5ECB7E1F3B3ACC00439F21 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */; };
 		7E64CE801F33611900DEE7E8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E64CE7F1F33611900DEE7E8 /* logo.png */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +30,11 @@
 		7E00FD001F33483C0090F229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E00FD021F33483C0090F229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E04DECA1F334B8B00FB79A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7E0ADDE41F37711000C7B65F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E0EEE121F3494DD008873BA /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		7E49114E1F372BF7003A3475 /* artlyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = artlyLogo.png; sourceTree = "<group>"; };
+		7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileController.swift; path = ../UserProfileController.swift; sourceTree = "<group>"; };
+		7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHeader.swift; path = ../UserProfileHeader.swift; sourceTree = "<group>"; };
 		7E64CE7F1F33611900DEE7E8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7E00FCFA1F33483C0090F229 /* Main.storyboard */,
-				7E64CE7E1F33610E00DEE7E8 /* images */,
+				7E5ECB7C1F3B3A9500439F21 /* UserProfile */,
 				7E04DEC71F334AAD00FB79A8 /* Controllers */,
 				7E04DEC61F3349DA00FB79A8 /* defaults */,
 			);
@@ -73,6 +79,7 @@
 		7E04DEC61F3349DA00FB79A8 /* defaults */ = {
 			isa = PBXGroup;
 			children = (
+				7E64CE7E1F33610E00DEE7E8 /* images */,
 				7E00FCF61F33483C0090F229 /* AppDelegate.swift */,
 				7E00FCFD1F33483C0090F229 /* Assets.xcassets */,
 				7E00FCFF1F33483C0090F229 /* LaunchScreen.storyboard */,
@@ -89,6 +96,16 @@
 				7E0EEE121F3494DD008873BA /* SignUpController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7E5ECB7C1F3B3A9500439F21 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */,
+				7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */,
+				7E0ADDE41F37711000C7B65F /* User.swift */,
+			);
+			name = UserProfile;
 			sourceTree = "<group>";
 		};
 		7E64CE7E1F33610E00DEE7E8 /* images */ = {
@@ -175,8 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E00FCF91F33483C0090F229 /* CommunityController.swift in Sources */,
+				7E5ECB7E1F3B3ACC00439F21 /* UserProfileHeader.swift in Sources */,
 				7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */,
+				7E5ECB7B1F3B34B800439F21 /* UserProfileController.swift in Sources */,
 				7E00FCF71F33483C0090F229 /* AppDelegate.swift in Sources */,
+				7E0ADDE51F37711000C7B65F /* User.swift in Sources */,
 				7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
