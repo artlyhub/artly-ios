@@ -66,7 +66,7 @@ class LoginController: UIViewController, UIImagePickerControllerDelegate, UINavi
     func logInBtnPressed(sender : UIButton) {
         getUserDataFromServer()
         let _chageViewController =
-            UINavigationController(rootViewController: CommunityController())
+            UINavigationController(rootViewController: MainHomeController())
         present(_chageViewController, animated: false, completion: nil)
     }
     

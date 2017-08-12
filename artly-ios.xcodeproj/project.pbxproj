@@ -18,6 +18,10 @@
 		7E49114F1F372BF7003A3475 /* artlyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E49114E1F372BF7003A3475 /* artlyLogo.png */; };
 		7E5ECB7B1F3B34B800439F21 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */; };
 		7E5ECB7E1F3B3ACC00439F21 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */; };
+		7E5F5C801F3F2467001B6043 /* MainHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C7F1F3F2467001B6043 /* MainHomeController.swift */; };
+		7E5F5C821F3F2756001B6043 /* CloudFundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C811F3F2756001B6043 /* CloudFundController.swift */; };
+		7E5F5C841F3F2765001B6043 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C831F3F2765001B6043 /* SearchController.swift */; };
+		7E5F5C871F3F278F001B6043 /* AuctionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C861F3F278F001B6043 /* AuctionController.swift */; };
 		7E64CE801F33611900DEE7E8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E64CE7F1F33611900DEE7E8 /* logo.png */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		7E49114E1F372BF7003A3475 /* artlyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = artlyLogo.png; sourceTree = "<group>"; };
 		7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileController.swift; path = ../UserProfileController.swift; sourceTree = "<group>"; };
 		7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileHeader.swift; path = ../UserProfileHeader.swift; sourceTree = "<group>"; };
+		7E5F5C7F1F3F2467001B6043 /* MainHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainHomeController.swift; path = ../MainHomeController.swift; sourceTree = "<group>"; };
+		7E5F5C811F3F2756001B6043 /* CloudFundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudFundController.swift; path = ../CloudFundController.swift; sourceTree = "<group>"; };
+		7E5F5C831F3F2765001B6043 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = ../SearchController.swift; sourceTree = "<group>"; };
+		7E5F5C861F3F278F001B6043 /* AuctionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuctionController.swift; path = ../AuctionController.swift; sourceTree = "<group>"; };
 		7E64CE7F1F33611900DEE7E8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				7E00FCFA1F33483C0090F229 /* Main.storyboard */,
-				7E5ECB7C1F3B3A9500439F21 /* UserProfile */,
+				7E5F5C881F3F279A001B6043 /* TabControllers */,
 				7E04DEC71F334AAD00FB79A8 /* Controllers */,
 				7E04DEC61F3349DA00FB79A8 /* defaults */,
 			);
@@ -91,8 +99,8 @@
 		7E04DEC71F334AAD00FB79A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E5F5C7F1F3F2467001B6043 /* MainHomeController.swift */,
 				7E04DECA1F334B8B00FB79A8 /* LoginController.swift */,
-				7E00FCF81F33483C0090F229 /* CommunityController.swift */,
 				7E0EEE121F3494DD008873BA /* SignUpController.swift */,
 			);
 			name = Controllers;
@@ -106,6 +114,18 @@
 				7E0ADDE41F37711000C7B65F /* User.swift */,
 			);
 			name = UserProfile;
+			sourceTree = "<group>";
+		};
+		7E5F5C881F3F279A001B6043 /* TabControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E5ECB7C1F3B3A9500439F21 /* UserProfile */,
+				7E5F5C861F3F278F001B6043 /* AuctionController.swift */,
+				7E5F5C831F3F2765001B6043 /* SearchController.swift */,
+				7E5F5C811F3F2756001B6043 /* CloudFundController.swift */,
+				7E00FCF81F33483C0090F229 /* CommunityController.swift */,
+			);
+			name = TabControllers;
 			sourceTree = "<group>";
 		};
 		7E64CE7E1F33610E00DEE7E8 /* images */ = {
@@ -192,10 +212,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E00FCF91F33483C0090F229 /* CommunityController.swift in Sources */,
+				7E5F5C841F3F2765001B6043 /* SearchController.swift in Sources */,
 				7E5ECB7E1F3B3ACC00439F21 /* UserProfileHeader.swift in Sources */,
 				7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */,
 				7E5ECB7B1F3B34B800439F21 /* UserProfileController.swift in Sources */,
 				7E00FCF71F33483C0090F229 /* AppDelegate.swift in Sources */,
+				7E5F5C821F3F2756001B6043 /* CloudFundController.swift in Sources */,
+				7E5F5C801F3F2467001B6043 /* MainHomeController.swift in Sources */,
+				7E5F5C871F3F278F001B6043 /* AuctionController.swift in Sources */,
 				7E0ADDE51F37711000C7B65F /* User.swift in Sources */,
 				7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */,
 			);
