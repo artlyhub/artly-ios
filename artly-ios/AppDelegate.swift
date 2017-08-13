@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //window?.makeKeyAndVisible()
         window = UIWindow()
         window?.rootViewController = LoginController()
-        
         //window?.rootViewController = UINavigationController(rootViewController: LoginController())
         return true
     }

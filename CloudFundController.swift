@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CloudFundController: UICollectionViewController {
+class CloudFundController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,7 @@ class CloudFundController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        
-        collectionView?.backgroundColor = .white
+        view.backgroundColor = .white
+        //collectionView?.backgroundColor = .white
     }
-
 }

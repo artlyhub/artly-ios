@@ -14,13 +14,14 @@ class MainHomeController: UITabBarController {
         super.viewDidLoad()
         
         let layout = UICollectionViewFlowLayout()
-        let communityController = CommunityController(collectionViewLayout: layout)
-        let communityNavController = UINavigationController(rootViewController: communityController)
-        communityNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_home")
         
         let userProfileController = UserProfileController(collectionViewLayout: layout)
         let userProfileNavController = UINavigationController(rootViewController: userProfileController)
         userProfileNavController.tabBarItem.image = #imageLiteral(resourceName: "profile_selected")
+        
+        let communityController = CommunityController(collectionViewLayout: layout)
+        let communityNavController = UINavigationController(rootViewController: communityController)
+        communityNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_home")
         
         let auctionController = AuctionController(collectionViewLayout: layout)
         let auctionNavController = UINavigationController(rootViewController: auctionController)
@@ -30,7 +31,8 @@ class MainHomeController: UITabBarController {
         let searchNavController = UINavigationController(rootViewController: searchController)
         searchNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_search")
         
-        let cloudFundController = CloudFundController(collectionViewLayout: layout)
+        let cloudFundController = CloudFundController()
+        cloudFundController.tabBarItem.image = #imageLiteral(resourceName: "ic_cloud")
         let cloudFundNavController = UINavigationController(rootViewController: cloudFundController)
         cloudFundNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_cloud")
         
@@ -38,24 +40,10 @@ class MainHomeController: UITabBarController {
         viewControllers = [communityNavController, searchNavController,
         cloudFundNavController, auctionNavController, userProfileNavController]
         
-        let logoImage = UIImageView(image: #imageLiteral(resourceName: "artlyLogo"))
-        logoImage.frame = CGRect(x: 0, y: 0, width: 38, height: 38)
-        logoImage.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = logoImage
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_create"), style: .plain, target: self, action: #selector(handleCreate))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.black
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_message"), style: .plain, target: self, action: #selector(handleMessage))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+        //modify tab bar item insets
+        guard let items = tabBar.items else { return }
+        for item in items {
+            item.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+        }
     }
-    
-    func handleMessage() {
-        let _chageViewController = LoginController();
-        present(_chageViewController, animated: true, completion: nil)
-    }
-    
-    func handleCreate() {
-        let _chageViewController = LoginController();
-        present(_chageViewController, animated: true, completion: nil)
-    }
-
 }
