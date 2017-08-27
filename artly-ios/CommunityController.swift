@@ -25,8 +25,8 @@ class CommunityController: UICollectionViewController {
     }
     
     func handleMessage() {
-        let _chageViewController = LoginController();
-        present(_chageViewController, animated: true, completion: nil)
+        let _chageViewController = UINavigationController(rootViewController: MessageController())
+        present(_chageViewController, animated: false, completion: nil)
     }
     
     func handleCreate() {

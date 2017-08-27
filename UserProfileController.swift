@@ -8,9 +8,15 @@
 
 import UIKit
 
-class UserProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class UserProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UserProfileHearderDelegate {
     
     let cellId = "cellId"
+    
+    func didEditProfilePressed() {
+        let _chageViewController =
+            UINavigationController(rootViewController: EditProfileController())
+        present(_chageViewController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +68,11 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! UserProfileHeader
+        header.delegate = self
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
     }
-
 }

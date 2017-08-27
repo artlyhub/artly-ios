@@ -155,8 +155,7 @@ class SignUpController: UIViewController {
     }
     
     func handleBackSpace() {
-        let loginController = LoginController()
-        present(loginController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil) //이전의 화면으로 돌아가기
     }
     
     func setupButton() {

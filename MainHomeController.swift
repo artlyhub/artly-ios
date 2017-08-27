@@ -23,22 +23,16 @@ class MainHomeController: UITabBarController {
         let communityNavController = UINavigationController(rootViewController: communityController)
         communityNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_home")
         
-        let auctionController = AuctionController(collectionViewLayout: layout)
-        let auctionNavController = UINavigationController(rootViewController: auctionController)
-        auctionNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_attach_money")
-        
-        let searchController = SearchController(collectionViewLayout: layout)
-        let searchNavController = UINavigationController(rootViewController: searchController)
+        let searchNavController = SearchController()
         searchNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_search")
         
         let cloudFundController = CloudFundController()
-        cloudFundController.tabBarItem.image = #imageLiteral(resourceName: "ic_cloud")
         let cloudFundNavController = UINavigationController(rootViewController: cloudFundController)
         cloudFundNavController.tabBarItem.image = #imageLiteral(resourceName: "ic_cloud")
         
         tabBar.tintColor = .black
         viewControllers = [communityNavController, searchNavController,
-        cloudFundNavController, auctionNavController, userProfileNavController]
+        cloudFundNavController, userProfileNavController]
         
         //modify tab bar item insets
         guard let items = tabBar.items else { return }

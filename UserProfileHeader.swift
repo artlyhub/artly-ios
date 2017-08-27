@@ -7,11 +7,15 @@
 //
 
 import UIKit
-
+protocol UserProfileHearderDelegate {
+    func didEditProfilePressed()
+}
 class UserProfileHeader: UICollectionViewCell {
     
+    var delegate: UserProfileHearderDelegate?
+    
     let profileImageView: UIImageView = {
-        let iv = UIImageView()
+        let iv = UIImageView(image: #imageLiteral(resourceName: "plus_photo"))
         return iv
     }()
     
@@ -59,7 +63,7 @@ class UserProfileHeader: UICollectionViewCell {
     let followersLabel: UILabel = {
         let label = UILabel()
         
-        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "99\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
         
         attributedText.append(NSAttributedString(string: "followers", attributes: [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont.systemFont(ofSize: 14)]))
         
@@ -73,7 +77,7 @@ class UserProfileHeader: UICollectionViewCell {
     let followingLabel: UILabel = {
         let label = UILabel()
         
-        let attributedText = NSMutableAttributedString(string: "0\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
+        let attributedText = NSMutableAttributedString(string: "100\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
         
         attributedText.append(NSAttributedString(string: "following", attributes: [NSForegroundColorAttributeName: UIColor.lightGray, NSFontAttributeName: UIFont.systemFont(ofSize: 14)]))
         
@@ -84,7 +88,7 @@ class UserProfileHeader: UICollectionViewCell {
         return label
     }()
     
-    let editProfileButton: UIButton = {
+    lazy var editProfileButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Edit Profile", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -92,8 +96,13 @@ class UserProfileHeader: UICollectionViewCell {
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 3
+        button.addTarget(self, action: #selector(handleEditProfile), for: .touchUpInside)
         return button
     }()
+    
+    func handleEditProfile(sender: UIButton!) {
+        delegate?.didEditProfilePressed()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

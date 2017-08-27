@@ -15,7 +15,10 @@
 		7E04DECB1F334B8B00FB79A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E04DECA1F334B8B00FB79A8 /* LoginController.swift */; };
 		7E0ADDE51F37711000C7B65F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0ADDE41F37711000C7B65F /* User.swift */; };
 		7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0EEE121F3494DD008873BA /* SignUpController.swift */; };
+		7E48E7F21F52F2B200F3A66D /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E48E7F11F52F2B200F3A66D /* EditProfileController.swift */; };
 		7E49114F1F372BF7003A3475 /* artlyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E49114E1F372BF7003A3475 /* artlyLogo.png */; };
+		7E4997C61F45C06E007D3365 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4997C51F45C06E007D3365 /* MessageController.swift */; };
+		7E4997C81F45C3A6007D3365 /* MessageSendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4997C71F45C3A6007D3365 /* MessageSendController.swift */; };
 		7E569CD21F409CAD0043C01F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E569CD11F409CAD0043C01F /* Utils.swift */; };
 		7E569CD41F409D630043C01F /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E569CD31F409D630043C01F /* PhotoSelectorController.swift */; };
 		7E569CD91F409E9E0043C01F /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E569CD81F409E9E0043C01F /* PhotoSelectorCell.swift */; };
@@ -25,7 +28,6 @@
 		7E5F5C801F3F2467001B6043 /* MainHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C7F1F3F2467001B6043 /* MainHomeController.swift */; };
 		7E5F5C821F3F2756001B6043 /* CloudFundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C811F3F2756001B6043 /* CloudFundController.swift */; };
 		7E5F5C841F3F2765001B6043 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C831F3F2765001B6043 /* SearchController.swift */; };
-		7E5F5C871F3F278F001B6043 /* AuctionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F5C861F3F278F001B6043 /* AuctionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,10 @@
 		7E04DECA1F334B8B00FB79A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7E0ADDE41F37711000C7B65F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E0EEE121F3494DD008873BA /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		7E48E7F11F52F2B200F3A66D /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		7E49114E1F372BF7003A3475 /* artlyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = artlyLogo.png; sourceTree = "<group>"; };
+		7E4997C51F45C06E007D3365 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageController.swift; path = ../MessageController.swift; sourceTree = "<group>"; };
+		7E4997C71F45C3A6007D3365 /* MessageSendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSendController.swift; sourceTree = "<group>"; };
 		7E569CD11F409CAD0043C01F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
 		7E569CD31F409D630043C01F /* PhotoSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoSelectorController.swift; path = ../PhotoSelectorController.swift; sourceTree = "<group>"; };
 		7E569CD81F409E9E0043C01F /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoSelectorCell.swift; path = ../PhotoSelectorCell.swift; sourceTree = "<group>"; };
@@ -49,7 +54,6 @@
 		7E5F5C7F1F3F2467001B6043 /* MainHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainHomeController.swift; path = ../MainHomeController.swift; sourceTree = "<group>"; };
 		7E5F5C811F3F2756001B6043 /* CloudFundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudFundController.swift; path = ../CloudFundController.swift; sourceTree = "<group>"; };
 		7E5F5C831F3F2765001B6043 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = ../SearchController.swift; sourceTree = "<group>"; };
-		7E5F5C861F3F278F001B6043 /* AuctionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuctionController.swift; path = ../AuctionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				7E00FCF81F33483C0090F229 /* CommunityController.swift */,
+				7E4997C51F45C06E007D3365 /* MessageController.swift */,
+				7E4997C71F45C3A6007D3365 /* MessageSendController.swift */,
 				7E569CD31F409D630043C01F /* PhotoSelectorController.swift */,
 				7E569CD81F409E9E0043C01F /* PhotoSelectorCell.swift */,
 				7E569CDA1F40A1CE0043C01F /* PhotoSelectorHeader.swift */,
@@ -130,6 +136,7 @@
 				7E5ECB7D1F3B3ACC00439F21 /* UserProfileHeader.swift */,
 				7E5ECB7A1F3B34B800439F21 /* UserProfileController.swift */,
 				7E0ADDE41F37711000C7B65F /* User.swift */,
+				7E48E7F11F52F2B200F3A66D /* EditProfileController.swift */,
 			);
 			name = UserProfile;
 			sourceTree = "<group>";
@@ -139,7 +146,6 @@
 			children = (
 				7E569CD51F409D710043C01F /* Community */,
 				7E5ECB7C1F3B3A9500439F21 /* UserProfile */,
-				7E5F5C861F3F278F001B6043 /* AuctionController.swift */,
 				7E5F5C831F3F2765001B6043 /* SearchController.swift */,
 				7E5F5C811F3F2756001B6043 /* CloudFundController.swift */,
 			);
@@ -236,10 +242,12 @@
 				7E5ECB7B1F3B34B800439F21 /* UserProfileController.swift in Sources */,
 				7E00FCF71F33483C0090F229 /* AppDelegate.swift in Sources */,
 				7E5F5C821F3F2756001B6043 /* CloudFundController.swift in Sources */,
+				7E4997C81F45C3A6007D3365 /* MessageSendController.swift in Sources */,
 				7E5F5C801F3F2467001B6043 /* MainHomeController.swift in Sources */,
 				7E569CD41F409D630043C01F /* PhotoSelectorController.swift in Sources */,
-				7E5F5C871F3F278F001B6043 /* AuctionController.swift in Sources */,
+				7E4997C61F45C06E007D3365 /* MessageController.swift in Sources */,
 				7E0ADDE51F37711000C7B65F /* User.swift in Sources */,
+				7E48E7F21F52F2B200F3A66D /* EditProfileController.swift in Sources */,
 				7E0EEE131F3494DD008873BA /* SignUpController.swift in Sources */,
 				7E569CD21F409CAD0043C01F /* Utils.swift in Sources */,
 			);
